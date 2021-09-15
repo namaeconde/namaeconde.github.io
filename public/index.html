@@ -49,7 +49,26 @@
         connectParticles: true,
         minDistance: 120,
         showParticles: true,
-        sizeVariations: 3
+        sizeVariations: 3,
+        responsive: [
+          {
+            breakpoint: 768,
+            options: {
+              maxParticles: 70
+            }
+          }, {
+            breakpoint: 425,
+            options: {
+              maxParticles: 50
+            }
+          },
+          {
+            breakpoint: 320,
+            options: {
+              maxParticles: 20
+            }
+          }
+        ]
       });
     };
   </script>
