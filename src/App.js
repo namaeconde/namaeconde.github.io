@@ -1,13 +1,7 @@
-import './App.css';
+import PortfolioPage from "./PortfolioPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <canvas className="background" />
-      <header className="App-header">
-      </header>
-    </div>
+    <PortfolioPage />
   );
 }
-
-export default App;
