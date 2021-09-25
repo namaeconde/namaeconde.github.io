@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { indigo } from '@mui/material/colors'
+import { color } from './theme.js';
 
 export const ParticlesCanvas = () => {
   return (
@@ -8,11 +8,12 @@ export const ParticlesCanvas = () => {
 }
 
 export default function PortfolioPage() {
+
   return (
     <Box
       display="flex"
       minHeight="100vh"
-      bgcolor={ indigo[900] }
+      bgcolor={ color.tangaroa[900] }
     >
       <ParticlesCanvas />
     </Box>
