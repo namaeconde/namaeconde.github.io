@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Box,
   Stack,
@@ -22,29 +23,45 @@ export const ParticlesCanvas = () => {
   )
 }
 
-const BusinessCard = () => {
+const BusinessCard = ({ profile }) => {
+  const {
+    name,
+    position,
+    phoneNumber,
+    emailAddress,
+    linkedInUrl,
+    githubUrl
+  } = profile
+
   return (
     <Card sx={{ width: 275 }} style={{ zIndex: 1 }}>
       <CardContent>
         <Typography variant="body1" color={ color.atlantis[900] }>
-          Lunamae Shalom M. Conde
+          { name }
         </Typography>
         <Typography variant="caption" color="text.secondary">
-          Software Engineer
+          { position }
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton href="tel:+6399992216589"><PhoneIcon /></IconButton>
-        <IconButton href="mailto:namaeconde@gmail.com"><EmailIcon /></IconButton>
-        <IconButton href="https://www.linkedin.com/in/namaeconde" target="_blank"><LinkedInIcon /></IconButton>
-        <IconButton href="https://github.com/namaeconde" target="_blank"><GitHubIcon /></IconButton>
+        { phoneNumber && <IconButton href={`tel:${phoneNumber}`}><PhoneIcon /></IconButton> }
+        { emailAddress && <IconButton href={`mailto:${emailAddress}`}><EmailIcon /></IconButton> }
+        { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
+        { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
       </CardActions>
     </Card>
   );
 }
 
 export default function PortfolioPage() {
-
+  const [profile] = useState({
+    name: "Lunamae Shalom M. Conde",
+    position: "Software Engineer",
+    phoneNumber: "+639992216589",
+    emailAddress: "namaeconde@gmail.com",
+    linkedInUrl: "https://www.linkedin.com/in/namaeconde",
+    githubUrl: "https://github.com/namaeconde"
+  })
   return (
     <Box
       display="flex"
@@ -52,7 +69,7 @@ export default function PortfolioPage() {
       bgcolor={ color.tangaroa[900] }
     >
       <Stack spacing={2} margin="0 auto" justifyContent="center">
-        <BusinessCard />
+        <BusinessCard profile={profile}/>
       </Stack>
       <ParticlesCanvas />
     </Box>
