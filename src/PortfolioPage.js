@@ -4,7 +4,7 @@ import {
   Stack,
   Typography,
   Card,
-  CardActions,
+  CardActionArea,
   CardContent,
   IconButton
 } from '@mui/material';
@@ -33,22 +33,33 @@ const BusinessCard = ({ profile }) => {
     githubUrl
   } = profile
 
+  const ContactInfo = ({icon, link, text}) => {
+    return (
+      <Box display="flex" alignItems="center">
+        <IconButton href={link}>{icon}</IconButton>
+        <Typography variant="caption" color={ color.turquoise[900] }>{text}</Typography>
+      </Box>
+    )
+  }
+
   return (
     <Card sx={{ width: 275 }} style={{ zIndex: 1 }}>
-      <CardContent>
-        <Typography variant="body1" color={ color.atlantis[900] }>
-          { name }
-        </Typography>
-        <Typography variant="caption" color="text.secondary">
-          { position }
-        </Typography>
-      </CardContent>
-      <CardActions>
-        { phoneNumber && <IconButton href={`tel:${phoneNumber}`}><PhoneIcon /></IconButton> }
-        { emailAddress && <IconButton href={`mailto:${emailAddress}`}><EmailIcon /></IconButton> }
-        { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
-        { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
-      </CardActions>
+      <CardActionArea>
+        <CardContent>
+          <Typography variant="body1" color={ color.atlantis[900] }>{ name }</Typography>
+          <Typography variant="caption" color="text.secondary">{ position }</Typography>
+          { phoneNumber &&
+          <ContactInfo icon={<PhoneIcon fontSize="small" color="primary"/>} link={`tel:${phoneNumber}`} text={phoneNumber}/>
+          }
+          { emailAddress &&
+          <ContactInfo icon={<EmailIcon fontSize="small" color="primary"/>} link={`mailto:${emailAddress}`} text={emailAddress}/>
+          }
+          <Box>
+            { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
+            { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
+          </Box>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 }

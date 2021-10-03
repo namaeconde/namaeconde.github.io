@@ -25,6 +25,9 @@ export const color = {
     100: "#F0FADC",
     50: "#F3FBE3"
   },
+  turquoise: {
+    900: "#66D9EF"
+  },
   black: {
     900: "#27282c"
   },
