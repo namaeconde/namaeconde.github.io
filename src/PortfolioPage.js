@@ -4,6 +4,7 @@ import {
   Stack,
   Typography,
   Card,
+  CardMedia,
   CardActionArea,
   CardContent,
   IconButton
@@ -14,7 +15,7 @@ import {
   GitHub as GitHubIcon,
   LocalPhone as PhoneIcon
 } from '@mui/icons-material';
-
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { color } from './theme.js';
 
 export const ParticlesCanvas = () => {
@@ -24,14 +25,6 @@ export const ParticlesCanvas = () => {
 }
 
 const BusinessCard = ({ profile }) => {
-  const {
-    name,
-    position,
-    phoneNumber,
-    emailAddress,
-    linkedInUrl,
-    githubUrl
-  } = profile
 
   const ContactInfo = ({icon, link, text}) => {
     return (
@@ -42,25 +35,65 @@ const BusinessCard = ({ profile }) => {
     )
   }
 
+  const Front = ({ profile }) => {
+    const {
+      name,
+      position,
+      phoneNumber,
+      emailAddress,
+      linkedInUrl,
+      githubUrl
+    } = profile
+
+    return (
+      <Card sx={{ width: 275, height: 180 }}>
+        <CardActionArea>
+          <CardContent>
+            <Typography variant="body1" color={ color.atlantis[900] }>{ name }</Typography>
+            <Typography variant="caption" color="text.secondary">{ position }</Typography>
+            { phoneNumber &&
+            <ContactInfo icon={<PhoneIcon fontSize="small" color="primary"/>} link={`tel:${phoneNumber}`} text={phoneNumber}/>
+            }
+            { emailAddress &&
+            <ContactInfo icon={<EmailIcon fontSize="small" color="primary"/>} link={`mailto:${emailAddress}`} text={emailAddress}/>
+            }
+            <Box>
+              { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
+              { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
+            </Box>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    )
+  };
+
+  const Back = () => {
+    return (
+      <Card sx={{ width: 275, height: 180 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            image="/nc-logo-monogram.png"
+          />
+        </CardActionArea>
+      </Card>
+    )
+  };
+
   return (
-    <Card sx={{ width: 275 }} style={{ zIndex: 1 }}>
-      <CardActionArea>
-        <CardContent>
-          <Typography variant="body1" color={ color.atlantis[900] }>{ name }</Typography>
-          <Typography variant="caption" color="text.secondary">{ position }</Typography>
-          { phoneNumber &&
-          <ContactInfo icon={<PhoneIcon fontSize="small" color="primary"/>} link={`tel:${phoneNumber}`} text={phoneNumber}/>
-          }
-          { emailAddress &&
-          <ContactInfo icon={<EmailIcon fontSize="small" color="primary"/>} link={`mailto:${emailAddress}`} text={emailAddress}/>
-          }
-          <Box>
-            { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
-            { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
-          </Box>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Flippy
+      flipOnHover={false}
+      flipOnClick={true}
+      flipDirection="vertical"
+      style={{ zIndex: '1' }}
+    >
+      <FrontSide style={{ boxShadow: '0 0' }}>
+        <Back />
+      </FrontSide>
+      <BackSide style={{ boxShadow: '0 0' }}>
+        <Front profile={profile} />
+      </BackSide>
+    </Flippy>
   );
 }
 
