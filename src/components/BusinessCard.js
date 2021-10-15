@@ -56,7 +56,7 @@ export const Back = () => {
         <Box display="flex" alignItems="center">
           <CardMedia
             component="img"
-            image="/nc-logo-monogram.png"
+            image="/nc-logo-monogram.webp"
             style={{ width: 50, height: 50 }}
           />
           <Typography variant="body1" color={ color.atlantis[900] }>Get In Touch</Typography>
