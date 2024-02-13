@@ -11,7 +11,7 @@ import React from "react";
 export const ContactInfo = ({icon, link, text}) => {
   return (
     <Box display="flex" alignItems="center">
-      <IconButton href={link} aria-label={text}>{icon}</IconButton>
+      <IconButton href={link} aria-label={`${text} Contact Info`}>{icon}</IconButton>
       <Typography variant="caption" color={ color.turquoise[900] }>{text}</Typography>
     </Box>
   )
@@ -40,8 +40,8 @@ export const Front = ({ profile }) => {
           <ContactInfo icon={<EmailIcon fontSize="small" color="primary"/>} link={`mailto:${emailAddress}`} text={emailAddress}/>
           }
           <Box>
-            { linkedInUrl && <IconButton href={linkedInUrl} target="_blank"><LinkedInIcon/></IconButton> }
-            { githubUrl && <IconButton href={githubUrl} target="_blank"><GitHubIcon/></IconButton> }
+            { linkedInUrl && <IconButton href={linkedInUrl} aria-label="LinkedIn URL" target="_blank"><LinkedInIcon/></IconButton> }
+            { githubUrl && <IconButton href={githubUrl} aria-label="Github URL" target="_blank"><GitHubIcon/></IconButton> }
           </Box>
         </CardContent>
       </CardActionArea>
