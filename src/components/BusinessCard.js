@@ -11,7 +11,7 @@ import React from "react";
 export const ContactInfo = ({icon, link, text}) => {
   return (
     <Box display="flex" alignItems="center">
-      <IconButton href={link}>{icon}</IconButton>
+      <IconButton href={link} aria-label={text}>{icon}</IconButton>
       <Typography variant="caption" color={ color.turquoise[900] }>{text}</Typography>
     </Box>
   )
@@ -55,6 +55,7 @@ export const Back = () => {
       <CardContent>
         <Box display="flex" alignItems="center">
           <CardMedia
+            alt="NC Logo Monogram"
             component="img"
             image="/nc-logo-monogram.webp"
             style={{ width: 50, height: 50 }}
