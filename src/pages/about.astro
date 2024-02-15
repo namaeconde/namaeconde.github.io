@@ -1,48 +1,53 @@
 ---
-import { Image } from "astro:assets";
-
 import PageLayout from "@/layouts/Base";
-import aboutImg from "@/assets/about-astro.png";
 
 const meta = {
 	title: "About",
-	description: "I'm a starter theme for Astro.build",
+	description: "Namae Conde bio",
 };
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">About</h1>
+		<h1 class="title mb-6">About</h1>
 		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
+			Greetings, fellow binary brethren and silicon sorcerers!  I'm Namae, a software engineer from the Philippines, 
+			where coconuts double as servers and typhoons test our internet resilience like nobody's business. 🇵🇭
 		</p>
-		<div class="flex justify-center">
-			<Image
-				src={aboutImg}
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				loading="eager"
-				fetchpriority="high"
-			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
+		<p>
+			I've been slinging code since 2013, which basically means I've witnessed the rise and fall of countless tech trends (RIP Vine). 
+			My brain runs on a potent mix of caffeine, memes, and the occasional existential crisis about the singularity.
+		</p>
+		<p>What can you expect on this digital pilgrimage? Buckle up for:</p>
 		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
+			<li class="mb-6">
+				<b class="text-accent">Tech ramblings:</b>
+				<blockquote>Deep dives into the latest tech wizardry, from the mind-blowing to the utterly mundane. 
+				Think "explain it like I'm a five-year-old... who also happens to be a computer scientist."</blockquote>
+			</li>
+			<li class="mb-6">
+				<b class="text-accent">Geek culture chronicles:</b>
+				<blockquote>Movie reviews from a programmer's perspective (spoiler alert: I might judge CGI based on its efficiency). 
+				Games, gadgets, board games, anime – if it's got a geek appeal, I'm diving in.</blockquote>
+			</li>
+			<li class="mb-6">
+				<b class="text-accent">Filipino life:</b>
+				<blockquote>A unique blend of coding adventures, cultural quirks, 
+				and the occasional struggle to explain to your lola what "cloud computing" is.</blockquote>
+			</li>
+			<li class="mb-6">
+				<b class="text-accent">A healthy dose of humor:</b>
+				<blockquote>Because let's face it, who wants to learn about algorithms without a few laughs along the way? 
+					<i>(Except maybe those super serious robots taking over the world...but even they need a chuckle, right?)</i>
+				</blockquote>
+			</li>
 		</ul>
 		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="github repository">repo</a
-			> if you like me!
+			So, if you're looking for a fun, informative, and slightly caffeinated tech blog with a twist, you've stumbled upon the right keyboard warrior. 
+			Stay awhile, explore, and don't be afraid to leave a comment <i>(unless it's about the time complexity of bubble sort, then please...let's not go there)</i>.
+		</p>
+		<p>
+			Happy coding, happy reading, and may the force be with your internet connection!
 		</p>
 	</div>
 </PageLayout>
