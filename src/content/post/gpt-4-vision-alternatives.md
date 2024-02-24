@@ -1,6 +1,6 @@
 ---
 title: "5 Hilariously Nerdy Alternatives to GPT-4 Vision"
-description: "This post is for testing the draft post functionality"
+description: "Uncover 5 hilariously nerdy alternatives to GPT-4 Vision in this article with a touch of humor!"
 publishDate: "18 Feb 2024"
 tags: ["gpt-4", "gpt-4-vision", "multimodal"]
 ---
