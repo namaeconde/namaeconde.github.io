@@ -8,6 +8,8 @@ draft: false
 
 ## Avatar: The Last Airbender Live-Action: Does It Fly Like Appa, or Flop Like Momo's Stolen Cabbage?
 
+![Gordon Cormier in Avatar The Last Airbender](./gordon-cormier-avatar-the-last-airbender.webp)
+
 Before I dive into binge watching the <span class="text-sky-400">Avatar: The Last Airbender (Netflix 2024)</span> I asked [Google's Gemini](https://gemini.google.com/) chat gpt (formerly Google Bard) to give a review on Netflix's highly-anticipated live-action remake of the Nickelodeon’s groundbreaking animated series _Avatar: The Last Airbender_ created by Michael Dante DiMartino and Bryan Konietzko. Check out it's <span class="text-red-400 font-bold">very detailed review</span> below. 
 
 > Remember the animated masterpiece, Avatar: The Last Airbender? The one that made you laugh, cry, and question the meaning of war, all while featuring elemental bending so cool it made even Sokka's boomerang look lame? Well, Netflix has taken a crack at bringing it to life, and the results are...well, as unpredictable as a rogue Fire Nation ship in a typhoon. Strap yourselves in, fellow benders (or non-benders, no judgment here), because we're about to bend the elements of review with a healthy dose of humor and, hopefully, some balanced insight.
