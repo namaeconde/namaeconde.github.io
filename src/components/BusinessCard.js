@@ -4,7 +4,7 @@ import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
-  LocalPhone as PhoneIcon
+  LocationOn as LocationIcon,
 } from "@mui/icons-material";
 import React from "react";
 
@@ -21,7 +21,7 @@ export const Front = ({ profile }) => {
   const {
     name,
     position,
-    phoneNumber,
+    address,
     emailAddress,
     linkedInUrl,
     githubUrl
@@ -33,8 +33,8 @@ export const Front = ({ profile }) => {
         <CardContent>
           <Typography variant="body1" color={ color.atlantis[900] }>{ name }</Typography>
           <Typography variant="caption" color="text.secondary">{ position }</Typography>
-          { phoneNumber &&
-          <ContactInfo icon={<PhoneIcon fontSize="small" color="primary"/>} link={`tel:${phoneNumber}`} text={phoneNumber}/>
+          { address &&
+          <ContactInfo icon={<LocationIcon fontSize="small" color="primary"/>} text={address}/>
           }
           { emailAddress &&
           <ContactInfo icon={<EmailIcon fontSize="small" color="primary"/>} link={`mailto:${emailAddress}`} text={emailAddress}/>
